@@ -1,2 +1,0 @@
-# MaterialuiSandbox
-Created with CodeSandbox
