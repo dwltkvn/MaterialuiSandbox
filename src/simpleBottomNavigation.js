@@ -17,9 +17,9 @@ const navAppBar = {
   bottom: 0,
   position: "fixed",
   width: "100%",
-  border: "red",
+  /*border: "red",
   borderStyle: "solid",
-  borderWidth: "1px",
+  borderWidth: "1px",*/
   display: "flex",
   justifyContent: "center"
 };
