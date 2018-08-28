@@ -18,11 +18,21 @@ const styles = {
   }
 };
 
+const appbarDiv = {
+  //maxHeight: "100%",
+  //overflow: "hidden",
+  //flexGrow: 1,
+  border: "magenta",
+  borderStyle: "solid",
+  borderWidth: "0px",
+  width: "100%"
+};
+
 function ButtonAppBar(props) {
   const { classes } = props;
   return (
-    <div>
-      <AppBar position="fixed">
+    <div style={appbarDiv}>
+      <AppBar position="static">
         <Toolbar>
           <IconButton
             className={classes.menuButton}
