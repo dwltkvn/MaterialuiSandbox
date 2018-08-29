@@ -26,16 +26,7 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-
     //this.callbackFunction = this.callbackFunction.bind(this);
-
-    /*
-      this.state =
-      {
-          field1 : value1,
-          field2 : value2,
-      }
-    */
   }
 
   render() {
@@ -45,7 +36,7 @@ class App extends React.Component {
       <div style={App.appStyles}>
         <ButtonAppBar />
         <div>
-          <h1>Hello CodeSandbox</h1>
+          <h1>{this.state.stateCurrentDir} CodeSandbox</h1>
           <h2>Start editing to see some magic happen!</h2>
           <h2>Start editing to see some magic happen!</h2>
           <h2>Start editing to see some magic happen!</h2>
@@ -88,7 +79,7 @@ class App extends React.Component {
           <h2>Start editing to see some magic happen!</h2>
         </div>
         <div style={App.spacer} />
-        <SimpleBottomNavigation />
+        <SimpleBottomNavigation ref={elem => (this.refBottomNav = elem)} />
       </div>
     );
   }
