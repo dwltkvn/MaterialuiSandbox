@@ -40,7 +40,7 @@ class SimpleBottomNavigation extends React.Component {
 
     this.state = {
       stateHideComponent: false,
-      stateCurrentDir: null
+      stateCurrentScrollDir: null
     };
   }
 
@@ -65,16 +65,16 @@ class SimpleBottomNavigation extends React.Component {
   }
 
   handleDirectionChange(dir) {
-    let stateCurrentDir;
+    let stateCurrentScrollDir;
     if (dir === 0) {
-      stateCurrentDir = "Down";
+      stateCurrentScrollDir = "Down";
       this.hideComponent(true);
     } else {
-      stateCurrentDir = "Up";
+      stateCurrentScrollDir = "Up";
       this.hideComponent(false);
     }
 
-    this.setState({ stateCurrentDir });
+    this.setState({ stateCurrentScrollDir });
   }
 
   handleChange = (event, value) => {
