@@ -32,7 +32,7 @@ function ButtonAppBar(props) {
   const { classes } = props;
   return (
     <div style={appbarDiv}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             className={classes.menuButton}
