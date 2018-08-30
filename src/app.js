@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 import ButtonAppBar from "./buttonAppBar";
 import SimpleBottomNavigation from "./simpleBottomNavigation";
 
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import AddIcon from "@material-ui/icons/Add";
+
 //const CmpntStateless = props => <div>{props.children}</div>;
 
 /*
@@ -21,6 +25,14 @@ const CmpntStateless3 = props => {
                                  }
 */
 
+const styles = theme => ({
+  fab: {
+    position: "fixed",
+    bottom: theme.spacing.unit * 2,
+    right: theme.spacing.unit * 2
+  }
+});
+
 class App extends React.Component {
   state = {};
 
@@ -31,12 +43,14 @@ class App extends React.Component {
 
   render() {
     /* code */
+    const { classes } = this.props;
 
     return (
       <div style={App.appStyles}>
         <ButtonAppBar />
-        <div>
-          <h1>{this.state.stateCurrentDir} CodeSandbox</h1>
+
+        <div style={App.contentStyles}>
+          <h1>CodeSandbox</h1>
           <h2>Start editing to see some magic happen!</h2>
           <h2>Start editing to see some magic happen!</h2>
           <h2>Start editing to see some magic happen!</h2>
@@ -79,7 +93,15 @@ class App extends React.Component {
           <h2>Start editing to see some magic happen!</h2>
         </div>
         <div style={App.spacer} />
-        <SimpleBottomNavigation ref={elem => (this.refBottomNav = elem)} />
+        <Button
+          variant="fab"
+          color="primary"
+          aria-label="Add"
+          className={classes.fab}
+        >
+          <AddIcon />
+        </Button>
+        <SimpleBottomNavigation />
       </div>
     );
   }
@@ -89,6 +111,9 @@ App.propTypes = {
   //classes: PropTypes.object.isRequired
 };
 
+App.contentStyles = {
+  marginTop: 0
+};
 App.appStyles = {
   border: "red",
   borderStyle: "solid",
@@ -107,4 +132,4 @@ App.spacer = {
   alignSelf: "center"
 };
 
-export default App;
+export default withStyles(styles)(App);

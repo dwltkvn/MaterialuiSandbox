@@ -24,7 +24,7 @@ const appbarDiv = {
   //overflow: "hidden",
   //flexGrow: 1,
   top: 0,
-  position: "fixed",
+  //position: "static",
   border: "magenta",
   borderStyle: "solid",
   borderWidth: "0px",
@@ -87,6 +87,8 @@ class ButtonAppBar extends React.Component {
     const { classes } = this.props;
     const { stateHideComponent } = this.state;
 
+    const styledPosition = { position: "fixed" };
+
     return (
       <Slide
         direction="down"
@@ -94,7 +96,7 @@ class ButtonAppBar extends React.Component {
         mountOnEnter
         unmountOnExit
       >
-        <div style={appbarDiv}>
+        <div style={{ ...appbarDiv, ...styledPosition }}>
           <AppBar position="static">
             <Toolbar>
               <IconButton

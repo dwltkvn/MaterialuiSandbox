@@ -17,10 +17,10 @@ const styles = {
 const navAppBar = {
   bottom: 0,
   position: "fixed",
-  width: "100%",
-  /*border: "red",
+  minWidth: "50%",
+  border: "red",
   borderStyle: "solid",
-  borderWidth: "1px",*/
+  borderWidth: "0px",
   display: "flex",
   justifyContent: "center"
 };
